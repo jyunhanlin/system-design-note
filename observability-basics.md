@@ -270,12 +270,6 @@ wallpaper                                 prune panels nobody asks about
 - 加 panel 前先問：**會有人反覆問這個問題嗎？** 「看起來有趣一次」不算。
 - 系統會變，值得凍結的問題也會變；加 panel 很容易，**刪 panel 才需要紀律**。
 
-## 和 Hidden Coupling 的關聯
-
-- [Hidden Coupling § 5. Observability Coupling](./hidden-coupling.md#5-observability-coupling)：telemetry 一旦被 alert、dashboard、autoscaling 讀取，就變成**契約**。
-- 本篇的 structured log 與 metric 命名，正是那份契約的內容：被機器讀取的欄位與 metric 名稱，改動時比照 API 走 expand → migrate → contract。
-- Telemetry pipeline 本身也不能擋在 request 路徑上：非同步、buffer 設上限、滿了就 drop。
-
 ## 延伸閱讀
 
 - Google SRE Book, *Monitoring Distributed Systems*：four golden signals、symptom vs cause
